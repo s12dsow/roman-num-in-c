@@ -20,7 +20,11 @@ int convert_to_arabic_num(char *val) {
 
 	for (int i = 0; i < len; i++) {
 
-		if(strncmp(val + i, "CD", 2) == 0) {
+		if(strncmp(val + i, "D", 1) == 0) {
+			arabic_num += 500;
+		}
+
+		else if(strncmp(val + i, "CD", 2) == 0) {
 			arabic_num += 400;
 			i += 1;
 		}

@@ -119,6 +119,14 @@ START_TEST (test_convert_CD_to_400)
 }
 END_TEST
 
+START_TEST (test_convert_CD_to_500)
+{
+
+    int num = convert_to_arabic_num("D");
+    ck_assert_int_eq(num, 500);
+}
+END_TEST
+
 Suite* roman_numerals_suite(void)
 {
     Suite *s;
@@ -147,6 +155,8 @@ Suite* roman_numerals_suite(void)
     tcase_add_test(tc_convert, test_convert_XC_to_90);
     tcase_add_test(tc_convert, test_convert_C_to_100);
     tcase_add_test(tc_convert, test_convert_CD_to_400);
+    tcase_add_test(tc_convert, test_convert_CD_to_500);
+
 
 
 
