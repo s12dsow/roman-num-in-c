@@ -10,3 +10,4 @@ clean:
 	rm -f *.o
 	rm -f *.a
 	rm -f rnc_tests
+	rm -f rnc_tests.dSYM/

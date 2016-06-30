@@ -2,9 +2,6 @@
 #include <string.h>
 #include <stdio.h>
 
-int convert_to_arabic_num(char *roman_num);
-void convert_to_roman_num(int num, char *roman_num);
-
 void add(char *first_val, char *second_val, char *roman_num) {
 	int first_value = convert_to_arabic_num(first_val);
 	int second_value = convert_to_arabic_num(second_val);
@@ -18,34 +15,45 @@ void add(char *first_val, char *second_val, char *roman_num) {
     
 }
 
-int convert_to_arabic_num(char *roman_num) {
+int convert_to_arabic_num(char *val) {
 	int arabic_num = 0;
-	// printf("%s\n", roman_num);
+	int len = strlen(val);
+	printf("##########\n");
 
-	if(strcmp(roman_num, "I") == 0) {
-		arabic_num += 1;
-		// printf("arabic num %i\n", arabic_num);
-	}
+	for (int i = 0; i < len; i++) {
+			printf("roman num inside %s == %s\n", val + i, "I");
+
+		if(strncmp(val + i, "V", 1) == 0) {
+
+			arabic_num += 5;
+		}
+
+		else if(strncmp(val + i, "IV", 2) == 0) {
+
+			arabic_num += 4;
+			i += 1;
+		}
+
+		else if(strncmp(val + i, "I", 1) == 0) {
+
+			arabic_num += 1;
+		}
+	} 
 	return arabic_num;
 }
 
 void convert_to_roman_num(int num, char *roman_num) {
+
+	int value = num;
 	
 	*roman_num = 0;
 
-
-	// printf("%i\n", num);
-
-	if(num % 1 == 0) {
+	if(value % 1 == 0) {
 		strcat(roman_num, "I");
-		num -= 1;
-		// printf("num %i\n", num);
+		value -= 1;
 	}
-	if(num % 1 == 0) {
+	if(value % 1 == 0) {
 		strcat(roman_num, "I");
-		num -= 1;
-		// printf("num second round %i\n", num);
+		value -= 1;
 	}
-
-	// printf("roman num%s\n", roman_num);
 }
