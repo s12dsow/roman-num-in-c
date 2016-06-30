@@ -23,7 +23,11 @@ int convert_to_arabic_num(char *val) {
 	for (int i = 0; i < len; i++) {
 			printf("roman num inside %s == %s\n", val + i, "I");
 
-		if(strncmp(val + i, "XL", 2) == 0) {
+		if(strncmp(val + i, "L", 1) == 0) {
+			arabic_num += 50;
+		}
+
+		else if(strncmp(val + i, "XL", 2) == 0) {
 			arabic_num += 40;
 			i += 1;
 		}
