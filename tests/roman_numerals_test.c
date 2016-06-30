@@ -71,6 +71,22 @@ START_TEST (test_convert_IX_to_9)
 }
 END_TEST
 
+START_TEST (test_convert_X_to_10)
+{
+
+    int num = convert_to_arabic_num("X");
+    ck_assert_int_eq(num, 10);
+}
+END_TEST
+
+START_TEST (test_convert_XL_to_40)
+{
+
+    int num = convert_to_arabic_num("XL");
+    ck_assert_int_eq(num, 40);
+}
+END_TEST
+
 
 Suite* roman_numerals_suite(void)
 {
@@ -94,6 +110,9 @@ Suite* roman_numerals_suite(void)
     tcase_add_test(tc_convert, test_convert_V_to_5);
     tcase_add_test(tc_convert, test_convert_VI_to_6);
     tcase_add_test(tc_convert, test_convert_IX_to_9);
+    tcase_add_test(tc_convert, test_convert_X_to_10);
+    tcase_add_test(tc_convert, test_convert_XL_to_40);
+
 
 
 
