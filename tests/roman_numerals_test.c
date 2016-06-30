@@ -63,6 +63,15 @@ START_TEST (test_convert_VI_to_6)
 }
 END_TEST
 
+START_TEST (test_convert_IX_to_9)
+{
+
+    int num = convert_to_arabic_num("IX");
+    ck_assert_int_eq(num, 9);
+}
+END_TEST
+
+
 Suite* roman_numerals_suite(void)
 {
     Suite *s;
@@ -83,7 +92,9 @@ Suite* roman_numerals_suite(void)
     tcase_add_test(tc_convert, test_convert_II_to_2);
     tcase_add_test(tc_convert, test_convert_IV_to_4);
     tcase_add_test(tc_convert, test_convert_V_to_5);
-    tcase_add_test(tc_convert, test_convert_VI_to_6);   
+    tcase_add_test(tc_convert, test_convert_VI_to_6);
+    tcase_add_test(tc_convert, test_convert_IX_to_9);
+
 
 
 
