@@ -95,6 +95,13 @@ START_TEST (test_convert_L_to_50)
 }
 END_TEST
 
+START_TEST (test_convert_XC_to_90)
+{
+
+    int num = convert_to_arabic_num("XC");
+    ck_assert_int_eq(num, 90);
+}
+END_TEST
 
 Suite* roman_numerals_suite(void)
 {
@@ -121,6 +128,8 @@ Suite* roman_numerals_suite(void)
     tcase_add_test(tc_convert, test_convert_X_to_10);
     tcase_add_test(tc_convert, test_convert_XL_to_40);
     tcase_add_test(tc_convert, test_convert_L_to_50);
+    tcase_add_test(tc_convert, test_convert_XC_to_90);
+
 
 
 
