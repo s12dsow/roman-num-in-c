@@ -28,7 +28,7 @@ int convert_to_arabic_num(char *val) {
 			i += 1;
 		}
 
-		if(strncmp(val + i, "X", 1) == 0) {
+		else if(strncmp(val + i, "X", 1) == 0) {
 			arabic_num += 10;
 		}
 
