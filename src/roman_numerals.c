@@ -20,6 +20,10 @@ int convert_to_arabic_num(char *val) {
 
 	for (int i = 0; i < len; i++) {
 
+		if(strncmp(val + i, "M", 1) == 0) {
+			arabic_num += 1000;
+		}
+
 		if(strncmp(val + i, "CM", 2) == 0) {
 			arabic_num += 900;
 			i += 1;
