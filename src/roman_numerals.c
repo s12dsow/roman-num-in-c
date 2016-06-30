@@ -11,19 +11,25 @@ void add(char *first_val, char *second_val, char *roman_num) {
     convert_to_roman_num(sum, roman_num);
 
 	printf("roman num %s\n", roman_num);
-
     
 }
 
 int convert_to_arabic_num(char *val) {
 	int arabic_num = 0;
 	int len = strlen(val);
-	printf("##########\n");
 
 	for (int i = 0; i < len; i++) {
-			printf("roman num inside %s == %s\n", val + i, "I");
 
-		if(strncmp(val + i, "XC", 2) == 0) {
+		if(strncmp(val + i, "CD", 2) == 0) {
+			arabic_num += 400;
+			i += 1;
+		}
+
+		else if(strncmp(val + i, "C", 1) == 0) {
+			arabic_num += 100;
+		}
+
+		else if(strncmp(val + i, "XC", 2) == 0) {
 			arabic_num += 90;
 			i += 1;
 		}
