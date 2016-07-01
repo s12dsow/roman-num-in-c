@@ -86,6 +86,11 @@ int convert_to_arabic_num(char *val) {
 void convert_to_roman_num(int num, char *roman_val) {
 	*roman_val = 0;
 
+	if(num >= 90) {
+		strcat(roman_val, "XC");
+		num -= 90;
+	}
+
 	if(num >= 50) {
 		strcat(roman_val, "L");
 		num -= 50;
