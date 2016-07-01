@@ -279,6 +279,16 @@ START_TEST (test_convert_500_to_D)
 }
 END_TEST
 
+START_TEST (test_convert_900_to_CM)
+{
+    char roman_val[16];
+
+    convert_to_roman_num(900, roman_val);
+
+    ck_assert_str_eq(roman_val, "CM");
+}
+END_TEST
+
 
 
 Suite* roman_numerals_suite(void)
@@ -328,6 +338,7 @@ Suite* roman_numerals_suite(void)
     tcase_add_test(tc_convert_to_roman, test_convert_100_to_C);
     tcase_add_test(tc_convert_to_roman, test_convert_400_to_CD);
     tcase_add_test(tc_convert_to_roman, test_convert_500_to_D);
+    tcase_add_test(tc_convert_to_roman, test_convert_900_to_CM);
 
 
 
