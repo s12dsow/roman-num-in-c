@@ -193,8 +193,8 @@ Suite* roman_numerals_suite(void)
     tc_convert_to_arabic = tcase_create("convert to arabic");
     tc_convert_to_roman = tcase_create("convert to roman");
 
-    // tcase_add_test(tc_core, test_I_plus_I_returns_II);
-    // tcase_add_test(tc_core, test_I_plus_II_returns_III);
+    tcase_add_test(tc_core, test_I_plus_I_returns_II);
+    tcase_add_test(tc_core, test_I_plus_II_returns_III);
     suite_add_tcase(s, tc_core);
 
     tcase_add_test(tc_convert_to_arabic, test_convert_I_to_1);
