@@ -148,35 +148,35 @@ Suite* roman_numerals_suite(void)
 {
     Suite *s;
     TCase *tc_core;
-    TCase *tc_convert;
+    TCase *tc_convert_to_arabic;
 
     s = suite_create("Roman Numerals");
 
     /* Core test case */
     tc_core = tcase_create("Core");
-    tc_convert = tcase_create("convert");
+    tc_convert_to_arabic = tcase_create("convert to arabic");
 
     tcase_add_test(tc_core, test_I_plus_I_returns_II);
     // tcase_add_test(tc_core, test_I_plus_II_returns_III);
     suite_add_tcase(s, tc_core);
 
-    tcase_add_test(tc_convert, test_convert_I_to_1);
-    tcase_add_test(tc_convert, test_convert_II_to_2);
-    tcase_add_test(tc_convert, test_convert_IV_to_4);
-    tcase_add_test(tc_convert, test_convert_V_to_5);
-    tcase_add_test(tc_convert, test_convert_VI_to_6);
-    tcase_add_test(tc_convert, test_convert_IX_to_9);
-    tcase_add_test(tc_convert, test_convert_X_to_10);
-    tcase_add_test(tc_convert, test_convert_XL_to_40);
-    tcase_add_test(tc_convert, test_convert_L_to_50);
-    tcase_add_test(tc_convert, test_convert_XC_to_90);
-    tcase_add_test(tc_convert, test_convert_C_to_100);
-    tcase_add_test(tc_convert, test_convert_CD_to_400);
-    tcase_add_test(tc_convert, test_convert_CD_to_500);
-    tcase_add_test(tc_convert, test_convert_CM_to_900);
-    tcase_add_test(tc_convert, test_convert_M_to_1000);
+    tcase_add_test(tc_convert_to_arabic, test_convert_I_to_1);
+    tcase_add_test(tc_convert_to_arabic, test_convert_II_to_2);
+    tcase_add_test(tc_convert_to_arabic, test_convert_IV_to_4);
+    tcase_add_test(tc_convert_to_arabic, test_convert_V_to_5);
+    tcase_add_test(tc_convert_to_arabic, test_convert_VI_to_6);
+    tcase_add_test(tc_convert_to_arabic, test_convert_IX_to_9);
+    tcase_add_test(tc_convert_to_arabic, test_convert_X_to_10);
+    tcase_add_test(tc_convert_to_arabic, test_convert_XL_to_40);
+    tcase_add_test(tc_convert_to_arabic, test_convert_L_to_50);
+    tcase_add_test(tc_convert_to_arabic, test_convert_XC_to_90);
+    tcase_add_test(tc_convert_to_arabic, test_convert_C_to_100);
+    tcase_add_test(tc_convert_to_arabic, test_convert_CD_to_400);
+    tcase_add_test(tc_convert_to_arabic, test_convert_CD_to_500);
+    tcase_add_test(tc_convert_to_arabic, test_convert_CM_to_900);
+    tcase_add_test(tc_convert_to_arabic, test_convert_M_to_1000);
 
-    suite_add_tcase(s, tc_convert);
+    suite_add_tcase(s, tc_convert_to_arabic);
 
     return s;
 
