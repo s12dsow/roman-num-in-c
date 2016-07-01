@@ -86,23 +86,27 @@ int convert_to_arabic_num(char *val) {
 void convert_to_roman_num(int num, char *roman_val) {
 	*roman_val = 0;
 
+	while(num >= 10) {
+		strcat(roman_val, "X");
+		num -= 10;
+	}
 
-	if(num % 9 == 0 && num > 0) {
+	if(num >= 9) {
 		strcat(roman_val, "IX");
 		num -= 9;
 	}
 
-	if(num % 5 == 0 && num > 0) {
+	if(num >= 5) {
 		strcat(roman_val, "V");
 		num -= 5;
 	}
 
-	if(num % 4 == 0 && num > 0) {
+	if(num >= 4) {
 		strcat(roman_val, "IV");
 		num -= 4;
 	}
 
-	while(num % 1 == 0 && num > 0) {
+	while(num >= 1) {
 		strcat(roman_val, "I");
 		num -= 1;
 	}

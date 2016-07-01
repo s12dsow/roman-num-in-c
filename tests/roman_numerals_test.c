@@ -209,6 +209,16 @@ START_TEST (test_convert_9_to_IX)
 }
 END_TEST
 
+START_TEST (test_convert_10_to_X)
+{
+    char roman_val[16];
+
+    convert_to_roman_num(10, roman_val);
+
+    ck_assert_str_eq(roman_val, "X");
+}
+END_TEST
+
 Suite* roman_numerals_suite(void)
 {
     Suite *s;
@@ -249,7 +259,7 @@ Suite* roman_numerals_suite(void)
     tcase_add_test(tc_convert_to_roman, test_convert_4_to_IV);
     tcase_add_test(tc_convert_to_roman, test_convert_5_to_V);
     tcase_add_test(tc_convert_to_roman, test_convert_9_to_IX);
-
+    tcase_add_test(tc_convert_to_roman, test_convert_10_to_X);
 
 
 
