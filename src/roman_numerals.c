@@ -86,6 +86,10 @@ int convert_to_arabic_num(char *val) {
 void convert_to_roman_num(int num, char *roman_val) {
 	*roman_val = 0;
 
+	while(num >= 1000) {
+		strcat(roman_val, "M");
+		num -= 1000;
+	}
 
 	if(num >= 900) {
 		strcat(roman_val, "CM");
