@@ -178,6 +178,26 @@ START_TEST (test_convert_3_to_III)
 }
 END_TEST
 
+START_TEST (test_convert_4_to_IV)
+{
+    char roman_val[16];
+
+    convert_to_roman_num(4, roman_val);
+
+    ck_assert_str_eq(roman_val, "IV");
+}
+END_TEST
+
+
+START_TEST (test_convert_5_to_V)
+{
+    char roman_val[16];
+
+    convert_to_roman_num(5, roman_val);
+
+    ck_assert_str_eq(roman_val, "V");
+}
+END_TEST
 
 Suite* roman_numerals_suite(void)
 {
@@ -216,6 +236,8 @@ Suite* roman_numerals_suite(void)
     tcase_add_test(tc_convert_to_roman, test_convert_1_to_I);
     tcase_add_test(tc_convert_to_roman, test_convert_2_to_II);
     tcase_add_test(tc_convert_to_roman, test_convert_3_to_III);
+    tcase_add_test(tc_convert_to_roman, test_convert_4_to_IV);
+    tcase_add_test(tc_convert_to_roman, test_convert_5_to_V);
 
 
 
