@@ -87,6 +87,11 @@ void convert_to_roman_num(int num, char *roman_val) {
 	*roman_val = 0;
 
 
+	if(num % 9 == 0 && num > 0) {
+		strcat(roman_val, "IX");
+		num -= 9;
+	}
+
 	if(num % 5 == 0 && num > 0) {
 		strcat(roman_val, "V");
 		num -= 5;
