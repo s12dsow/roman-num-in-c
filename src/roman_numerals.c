@@ -83,18 +83,11 @@ int convert_to_arabic_num(char *val) {
 	return arabic_num;
 }
 
-void convert_to_roman_num(int num, char *roman_num) {
+void convert_to_roman_num(int num, char *roman_val) {
+	*roman_val = 0;
 
-	int value = num;
-	
-	*roman_num = 0;
-
-	if(value % 1 == 0) {
-		strcat(roman_num, "I");
-		value -= 1;
-	}
-	if(value % 1 == 0) {
-		strcat(roman_num, "I");
-		value -= 1;
+	while(num % 1 == 0 && num > 0) {
+		strcat(roman_val, "I");
+		num -= 1;
 	}
 }

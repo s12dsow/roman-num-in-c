@@ -21,7 +21,7 @@ START_TEST (test_I_plus_II_returns_III)
 END_TEST
 
 
-// Test Converter
+// Test Convert to Arabic
 
 START_TEST (test_convert_I_to_1)
 {
@@ -144,19 +144,56 @@ START_TEST (test_convert_M_to_1000)
 }
 END_TEST
 
+
+// Convert to roman
+
+START_TEST (test_convert_1_to_I)
+{
+    char roman_val[16];
+
+    convert_to_roman_num(1, roman_val);
+
+    ck_assert_str_eq(roman_val, "I");
+}
+END_TEST
+
+
+START_TEST (test_convert_2_to_II)
+{
+    char roman_val[16];
+
+    convert_to_roman_num(2, roman_val);
+
+    ck_assert_str_eq(roman_val, "II");
+}
+END_TEST
+
+START_TEST (test_convert_3_to_III)
+{
+    char roman_val[16];
+
+    convert_to_roman_num(3, roman_val);
+
+    ck_assert_str_eq(roman_val, "III");
+}
+END_TEST
+
+
 Suite* roman_numerals_suite(void)
 {
     Suite *s;
     TCase *tc_core;
     TCase *tc_convert_to_arabic;
+    TCase *tc_convert_to_roman;
 
     s = suite_create("Roman Numerals");
 
     /* Core test case */
     tc_core = tcase_create("Core");
     tc_convert_to_arabic = tcase_create("convert to arabic");
+    tc_convert_to_roman = tcase_create("convert to roman");
 
-    tcase_add_test(tc_core, test_I_plus_I_returns_II);
+    // tcase_add_test(tc_core, test_I_plus_I_returns_II);
     // tcase_add_test(tc_core, test_I_plus_II_returns_III);
     suite_add_tcase(s, tc_core);
 
@@ -176,7 +213,15 @@ Suite* roman_numerals_suite(void)
     tcase_add_test(tc_convert_to_arabic, test_convert_CM_to_900);
     tcase_add_test(tc_convert_to_arabic, test_convert_M_to_1000);
 
+    tcase_add_test(tc_convert_to_roman, test_convert_1_to_I);
+    tcase_add_test(tc_convert_to_roman, test_convert_2_to_II);
+    tcase_add_test(tc_convert_to_roman, test_convert_3_to_III);
+
+
+
     suite_add_tcase(s, tc_convert_to_arabic);
+    suite_add_tcase(s, tc_convert_to_roman);
+
 
     return s;
 
