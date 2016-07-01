@@ -229,6 +229,16 @@ START_TEST (test_convert_40_to_XL)
 }
 END_TEST
 
+START_TEST (test_convert_50_to_L)
+{
+    char roman_val[16];
+
+    convert_to_roman_num(50, roman_val);
+
+    ck_assert_str_eq(roman_val, "L");
+}
+END_TEST
+
 Suite* roman_numerals_suite(void)
 {
     Suite *s;
@@ -271,8 +281,7 @@ Suite* roman_numerals_suite(void)
     tcase_add_test(tc_convert_to_roman, test_convert_9_to_IX);
     tcase_add_test(tc_convert_to_roman, test_convert_10_to_X);
     tcase_add_test(tc_convert_to_roman, test_convert_40_to_XL);
-
-
+    tcase_add_test(tc_convert_to_roman, test_convert_50_to_L);
 
     suite_add_tcase(s, tc_convert_to_arabic);
     suite_add_tcase(s, tc_convert_to_roman);
