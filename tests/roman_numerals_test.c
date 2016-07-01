@@ -259,6 +259,16 @@ START_TEST (test_convert_100_to_C)
 }
 END_TEST
 
+START_TEST (test_convert_400_to_CD)
+{
+    char roman_val[16];
+
+    convert_to_roman_num(400, roman_val);
+
+    ck_assert_str_eq(roman_val, "CD");
+}
+END_TEST
+
 
 Suite* roman_numerals_suite(void)
 {
@@ -305,6 +315,7 @@ Suite* roman_numerals_suite(void)
     tcase_add_test(tc_convert_to_roman, test_convert_50_to_L);
     tcase_add_test(tc_convert_to_roman, test_convert_90_to_XC);
     tcase_add_test(tc_convert_to_roman, test_convert_100_to_C);
+    tcase_add_test(tc_convert_to_roman, test_convert_400_to_CD);
 
 
 

@@ -86,6 +86,11 @@ int convert_to_arabic_num(char *val) {
 void convert_to_roman_num(int num, char *roman_val) {
 	*roman_val = 0;
 
+	if(num >= 400) {
+		strcat(roman_val, "CD");
+		num -= 400;
+	}
+
 	while(num >= 100) {
 		strcat(roman_val, "C");
 		num -= 100;
