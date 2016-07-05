@@ -151,7 +151,7 @@ START_TEST (test_convert_1_to_I)
 {
     char roman_val[16];
 
-    convert_to_roman_num(1, roman_val);
+    convert_to_roman(1, roman_val);
 
     ck_assert_str_eq(roman_val, "I");
 }
@@ -162,7 +162,7 @@ START_TEST (test_convert_2_to_II)
 {
     char roman_val[16];
 
-    convert_to_roman_num(2, roman_val);
+    convert_to_roman(2, roman_val);
 
     ck_assert_str_eq(roman_val, "II");
 }
@@ -172,7 +172,7 @@ START_TEST (test_convert_3_to_III)
 {
     char roman_val[16];
 
-    convert_to_roman_num(3, roman_val);
+    convert_to_roman(3, roman_val);
 
     ck_assert_str_eq(roman_val, "III");
 }
@@ -182,7 +182,7 @@ START_TEST (test_convert_4_to_IV)
 {
     char roman_val[16];
 
-    convert_to_roman_num(4, roman_val);
+    convert_to_roman(4, roman_val);
 
     ck_assert_str_eq(roman_val, "IV");
 }
@@ -193,7 +193,7 @@ START_TEST (test_convert_5_to_V)
 {
     char roman_val[16];
 
-    convert_to_roman_num(5, roman_val);
+    convert_to_roman(5, roman_val);
 
     ck_assert_str_eq(roman_val, "V");
 }
@@ -203,7 +203,7 @@ START_TEST (test_convert_9_to_IX)
 {
     char roman_val[16];
 
-    convert_to_roman_num(9, roman_val);
+    convert_to_roman(9, roman_val);
 
     ck_assert_str_eq(roman_val, "IX");
 }
@@ -213,7 +213,7 @@ START_TEST (test_convert_10_to_X)
 {
     char roman_val[16];
 
-    convert_to_roman_num(10, roman_val);
+    convert_to_roman(10, roman_val);
 
     ck_assert_str_eq(roman_val, "X");
 }
@@ -223,7 +223,7 @@ START_TEST (test_convert_40_to_XL)
 {
     char roman_val[16];
 
-    convert_to_roman_num(40, roman_val);
+    convert_to_roman(40, roman_val);
 
     ck_assert_str_eq(roman_val, "XL");
 }
@@ -233,7 +233,7 @@ START_TEST (test_convert_50_to_L)
 {
     char roman_val[16];
 
-    convert_to_roman_num(50, roman_val);
+    convert_to_roman(50, roman_val);
 
     ck_assert_str_eq(roman_val, "L");
 }
@@ -243,7 +243,7 @@ START_TEST (test_convert_90_to_XC)
 {
     char roman_val[16];
 
-    convert_to_roman_num(90, roman_val);
+    convert_to_roman(90, roman_val);
 
     ck_assert_str_eq(roman_val, "XC");
 }
@@ -253,7 +253,7 @@ START_TEST (test_convert_100_to_C)
 {
     char roman_val[16];
 
-    convert_to_roman_num(100, roman_val);
+    convert_to_roman(100, roman_val);
 
     ck_assert_str_eq(roman_val, "C");
 }
@@ -263,7 +263,7 @@ START_TEST (test_convert_400_to_CD)
 {
     char roman_val[16];
 
-    convert_to_roman_num(400, roman_val);
+    convert_to_roman(400, roman_val);
 
     ck_assert_str_eq(roman_val, "CD");
 }
@@ -273,7 +273,7 @@ START_TEST (test_convert_500_to_D)
 {
     char roman_val[16];
 
-    convert_to_roman_num(500, roman_val);
+    convert_to_roman(500, roman_val);
 
     ck_assert_str_eq(roman_val, "D");
 }
@@ -283,7 +283,7 @@ START_TEST (test_convert_900_to_CM)
 {
     char roman_val[16];
 
-    convert_to_roman_num(900, roman_val);
+    convert_to_roman(900, roman_val);
 
     ck_assert_str_eq(roman_val, "CM");
 }
@@ -293,7 +293,7 @@ START_TEST (test_convert_1000_to_M)
 {
     char roman_val[16];
 
-    convert_to_roman_num(1000, roman_val);
+    convert_to_roman(1000, roman_val);
 
     ck_assert_str_eq(roman_val, "M");
 }

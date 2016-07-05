@@ -4,6 +4,6 @@
 void add(char *first_val, char *second_val, char *roman_num);
 
 int convert_to_arabic_num(char *val);
-void convert_to_roman_num(int num, char *roman_num);
+void convert_to_roman(int num, char *roman_num);
 
 #endif
