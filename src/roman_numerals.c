@@ -3,15 +3,9 @@
 #include <stdio.h>
 
 void add(char *first_val, char *second_val, char *roman_num) {
-	int first_value = convert_to_arabic_num(first_val);
-	int second_value = convert_to_arabic_num(second_val);
-
-	int sum = first_value + second_value;
+	int sum = convert_to_arabic_num(first_val) + convert_to_arabic_num(second_val);
     
     convert_to_roman_num(sum, roman_num);
-
-	printf("roman num %s\n", roman_num);
-    
 }
 
 int convert_to_arabic_num(char *val) {
