@@ -78,6 +78,15 @@ START_TEST (test_XXIV_minus_XIV_returns_X)
 }
 END_TEST
 
+START_TEST (test_DCCVII_minus_XLIII_returns_DCLXIV)
+{
+    char roman_num[16];
+
+    substract("DCCVII", "XLIII", roman_num);
+    ck_assert_str_eq(roman_num, "DCLXIV");
+}
+END_TEST
+
 // Test Convert to Arabic
 
 START_TEST (test_convert_I_to_1)
@@ -379,6 +388,8 @@ Suite* roman_numerals_suite(void)
 
     tcase_add_test(tc_core, test_V_minus_I_returns_IV);
     tcase_add_test(tc_core, test_XXIV_minus_XIV_returns_X);
+    tcase_add_test(tc_core, test_DCCVII_minus_XLIII_returns_DCLXIV);
+
 
 
     suite_add_tcase(s, tc_core);
