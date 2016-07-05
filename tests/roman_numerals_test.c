@@ -47,6 +47,15 @@ START_TEST (test_XCVIII_plus_LXIX_returns_CLXVII)
 }
 END_TEST
 
+START_TEST (test_DXXX_plus_MDCCC_returns_MMCCCXXX)
+{
+    char roman_num[16];
+
+    add("DXXX", "MDCCC", roman_num);
+    ck_assert_str_eq(roman_num, "MMCCCXXX");
+}
+END_TEST
+
 // Test Convert to Arabic
 
 START_TEST (test_convert_I_to_1)
@@ -344,6 +353,7 @@ Suite* roman_numerals_suite(void)
     tcase_add_test(tc_core, test_II_plus_II_returns_IV);
     tcase_add_test(tc_core, test_V_plus_IV_returns_IX);
     tcase_add_test(tc_core, test_XCVIII_plus_LXIX_returns_CLXVII);
+    tcase_add_test(tc_core, test_DXXX_plus_MDCCC_returns_MMCCCXXX);
 
     suite_add_tcase(s, tc_core);
 
