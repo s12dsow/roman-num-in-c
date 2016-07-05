@@ -46,7 +46,6 @@ int convert_to_arabic_num(char *roman_numeral) {
 				i += roman_len - 1;
 			}
 		}
-
 	}
 	return arabic_num;
 }
