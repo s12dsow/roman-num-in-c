@@ -2,6 +2,7 @@
 #include <check.h>
 #include "../src/roman_numerals.h"
 
+// Test Add
 START_TEST (test_I_plus_I_returns_II)
 {
     char roman_num[16];
@@ -53,6 +54,27 @@ START_TEST (test_DXXX_plus_MDCCC_returns_MMCCCXXX)
 
     add("DXXX", "MDCCC", roman_num);
     ck_assert_str_eq(roman_num, "MMCCCXXX");
+}
+END_TEST
+
+// Test Substract
+
+START_TEST (test_V_minus_I_returns_IV)
+{
+    char roman_num[16];
+
+    substract("V", "I", roman_num);
+    ck_assert_str_eq(roman_num, "IV");
+}
+END_TEST
+
+
+START_TEST (test_XXIV_minus_XIV_returns_X)
+{
+    char roman_num[16];
+
+    substract("XXIV", "XIV", roman_num);
+    ck_assert_str_eq(roman_num, "X");
 }
 END_TEST
 
@@ -355,6 +377,10 @@ Suite* roman_numerals_suite(void)
     tcase_add_test(tc_core, test_XCVIII_plus_LXIX_returns_CLXVII);
     tcase_add_test(tc_core, test_DXXX_plus_MDCCC_returns_MMCCCXXX);
 
+    tcase_add_test(tc_core, test_V_minus_I_returns_IV);
+    tcase_add_test(tc_core, test_XXIV_minus_XIV_returns_X);
+
+
     suite_add_tcase(s, tc_core);
 
     tcase_add_test(tc_convert_to_arabic, test_convert_I_to_1);
@@ -388,7 +414,6 @@ Suite* roman_numerals_suite(void)
     tcase_add_test(tc_convert_to_roman, test_convert_500_to_D);
     tcase_add_test(tc_convert_to_roman, test_convert_900_to_CM);
     tcase_add_test(tc_convert_to_roman, test_convert_1000_to_M);
-
 
     suite_add_tcase(s, tc_convert_to_arabic);
     suite_add_tcase(s, tc_convert_to_roman);

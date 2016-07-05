@@ -8,6 +8,12 @@ void add(char *first_val, char *second_val, char *roman_num) {
     convert_to_roman(sum, roman_num);
 }
 
+void substract(char *first_val, char *second_val, char *roman_num) {
+	int diff = convert_to_arabic_num(first_val) - convert_to_arabic_num(second_val);
+
+	convert_to_roman(diff, roman_num);
+}
+
 typedef struct {
 	char *roman;
 	int num;
