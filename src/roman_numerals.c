@@ -2,14 +2,14 @@
 #include <string.h>
 #include <stdio.h>
 
-void add(char *first_val, char *second_val, char *roman_num) {
-	int sum = convert_to_arabic_num(first_val) + convert_to_arabic_num(second_val);
+void add(char *first_roman_string_input, char *second_roman_string_input, char *roman_num) {
+	int sum = convert_to_arabic_num(first_roman_string_input) + convert_to_arabic_num(second_roman_string_input);
     
     convert_to_roman(sum, roman_num);
 }
 
-void substract(char *first_val, char *second_val, char *roman_num) {
-	int diff = convert_to_arabic_num(first_val) - convert_to_arabic_num(second_val);
+void substract(char *first_roman_string_input, char *second_roman_string_input, char *roman_num) {
+	int diff = convert_to_arabic_num(first_roman_string_input) - convert_to_arabic_num(second_roman_string_input);
 
 	convert_to_roman(diff, roman_num);
 }
@@ -58,15 +58,16 @@ int convert_to_arabic_num(char *roman_numeral) {
 	return arabic_num;
 }
 
-void convert_to_roman(int num, char *roman_val) {
+void convert_to_roman(int arabic_num, char *roman_val) {
 	*roman_val = 0;
 	int i;
+
 	for(i = 0; i < roman_converter_len; i++) {
 		const roman_converter converter = ROMAN_TO_ARABIC_CONVERSION[i];
 
-		while(num >= converter.num) {
+		while(arabic_num >= converter.num) {
 			strcat(roman_val, converter.roman);
-			num -= converter.num;
+			arabic_num -= converter.num;
 		}
 	}
 }
