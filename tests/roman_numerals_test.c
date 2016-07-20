@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <check.h>
 #include "../src/roman_numerals.h"
+#include "../src/roman_numerals_private.h"
 
 // Test Add
 START_TEST (test_I_plus_I_returns_II)

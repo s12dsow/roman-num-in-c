@@ -1,4 +1,5 @@
 #include "roman_numerals.h"
+#include "roman_numerals_private.h"
 #include <string.h>
 #include <stdio.h>
 
