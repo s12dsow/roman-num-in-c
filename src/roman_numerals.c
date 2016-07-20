@@ -40,11 +40,9 @@ int roman_converter_len = sizeof(ROMAN_TO_ARABIC_CONVERSION) / sizeof(roman_conv
 int convert_to_arabic_num(char *roman_numeral) {
 	int arabic_num = 0;
 	int len = strlen(roman_numeral);
-	int i;
-	int j;
 
-	for (i = 0; i < len; i++) {
-		for(j = 0; j < roman_converter_len; j++) {
+	for (int i = 0; i < len; i++) {
+		for(int j = 0; j < roman_converter_len; j++) {
 
 			const roman_converter converter = ROMAN_TO_ARABIC_CONVERSION[j];
 			int roman_len = strlen(converter.roman);
@@ -61,9 +59,8 @@ int convert_to_arabic_num(char *roman_numeral) {
 
 void convert_to_roman(int arabic_num, char *roman_val) {
 	*roman_val = 0;
-	int i;
 
-	for(i = 0; i < roman_converter_len; i++) {
+	for(int i = 0; i < roman_converter_len; i++) {
 		const roman_converter converter = ROMAN_TO_ARABIC_CONVERSION[i];
 
 		while(arabic_num >= converter.num) {
