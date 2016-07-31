@@ -1,4 +1,5 @@
 #include "roman_converter.h"
+#include "roman_validator.h"
 #include <string.h>
 #include <stdio.h>
 
@@ -34,10 +35,13 @@ int convert_to_arabic_num(char *roman_numeral) {
 			const roman_converter converter = ROMAN_TO_ARABIC_CONVERSION[j];
 			int roman_len = strlen(converter.roman);
 
-			if(strncmp(roman_numeral + i, converter.roman, roman_len) == 0) {
+			if(is_valid_numeral(roman_numeral)) {
 
-				arabic_num += converter.num;
-				i += roman_len - 1;
+				if(strncmp(roman_numeral + i, converter.roman, roman_len) == 0) {
+
+					arabic_num += converter.num;
+					i += roman_len - 1;
+				}
 			}
 		}
 	}

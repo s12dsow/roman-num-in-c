@@ -132,6 +132,13 @@ START_TEST (test_convert_A_is_invalid)
 }
 END_TEST
 
+START_TEST (test_convert_IIII_is_invalid)
+{
+
+    int num = convert_to_arabic_num("IIII");
+    ck_assert_int_eq(num, 0);
+}
+END_TEST
 
 // Convert to Roman
 
@@ -315,7 +322,7 @@ Suite* roman_converter_suite(void)
     tcase_add_test(tc_convert_to_arabic, test_convert_CM_to_900);
     tcase_add_test(tc_convert_to_arabic, test_convert_M_to_1000);
     tcase_add_test(tc_convert_to_arabic, test_convert_A_is_invalid);
-
+    tcase_add_test(tc_convert_to_arabic, test_convert_IIII_is_invalid);
 
     suite_add_tcase(s, tc_convert_to_arabic);
 
