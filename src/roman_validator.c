@@ -10,10 +10,13 @@ int is_valid_numeral(char *roman_num) {
 
 	regcomp(&regex_compiled, valid_pattern, REG_EXTENDED);
 
-	// nmatch value is number of substrings in string that the regex function should try to match with subexpressions in roman num
 	status = regexec(&regex_compiled, roman_num, (size_t) 0, NULL, 0);
 
 	regfree(&regex_compiled);
 
-	return (status != REG_NOMATCH);
+	if (status == REG_NOMATCH) {
+		return 0;
+	}
+
+	return 1;
 }
