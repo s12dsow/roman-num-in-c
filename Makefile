@@ -1,9 +1,11 @@
-CFLAGS = `pkg-config --cflags --libs check`
+CC=gcc
+CFLAGS=`pkg-config --cflags --libs check`
+SRCS=src/roman_calculator.c src/roman_converter.c src/roman_validator.c
 
-build: src/roman_calculator.c src/roman_converter.c src/roman_validator.c
-	gcc -std=c99 $(CFLAGS) -c src/roman_calculator.c src/roman_converter.c src/roman_validator.c
+build: $(SRCS)
+	$(CC) -std=c99 $(CFLAGS) -c $(SRCS)
 test:
-	gcc -std=c99 -o rnc_tests src/roman_calculator.c src/roman_converter.c src/roman_validator.c tests/run_tests.c -lcheck $(CFLAGS)
+	$(CC) -std=c99 -o rnc_tests $(SRCS) tests/run_tests.c -lcheck $(CFLAGS)
 run-test: test
 	./rnc_tests
 clean:
