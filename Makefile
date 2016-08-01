@@ -1,6 +1,6 @@
 CFLAGS = `pkg-config --cflags --libs check`
 
-build: src/roman_calculator.c src/roman_converter.c
+build: src/roman_calculator.c src/roman_converter.c src/roman_validator.c
 	gcc -std=c99 $(CFLAGS) -c src/roman_calculator.c src/roman_converter.c src/roman_validator.c
 test:
 	gcc -std=c99 -o rnc_tests src/roman_calculator.c src/roman_converter.c src/roman_validator.c tests/run_tests.c -lcheck $(CFLAGS)
