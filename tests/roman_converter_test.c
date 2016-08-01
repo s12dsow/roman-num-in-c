@@ -12,7 +12,6 @@ END_TEST
 
 START_TEST (test_convert_II_to_2)
 {
-
     int num = convert_to_arabic_num("II");
     ck_assert_int_eq(num, 2);
 }
@@ -20,7 +19,6 @@ END_TEST
 
 START_TEST (test_convert_IV_to_4)
 {
-
     int num = convert_to_arabic_num("IV");
     ck_assert_int_eq(num, 4);
 }
@@ -29,7 +27,6 @@ END_TEST
 
 START_TEST (test_convert_V_to_5)
 {
-
     int num = convert_to_arabic_num("V");
     ck_assert_int_eq(num, 5);
 }
@@ -37,7 +34,6 @@ END_TEST
 
 START_TEST (test_convert_VI_to_6)
 {
-
     int num = convert_to_arabic_num("VI");
     ck_assert_int_eq(num, 6);
 }
@@ -45,7 +41,6 @@ END_TEST
 
 START_TEST (test_convert_IX_to_9)
 {
-
     int num = convert_to_arabic_num("IX");
     ck_assert_int_eq(num, 9);
 }
@@ -53,7 +48,6 @@ END_TEST
 
 START_TEST (test_convert_X_to_10)
 {
-
     int num = convert_to_arabic_num("X");
     ck_assert_int_eq(num, 10);
 }
@@ -61,7 +55,6 @@ END_TEST
 
 START_TEST (test_convert_XL_to_40)
 {
-
     int num = convert_to_arabic_num("XL");
     ck_assert_int_eq(num, 40);
 }
@@ -69,7 +62,6 @@ END_TEST
 
 START_TEST (test_convert_L_to_50)
 {
-
     int num = convert_to_arabic_num("L");
     ck_assert_int_eq(num, 50);
 }
@@ -77,7 +69,6 @@ END_TEST
 
 START_TEST (test_convert_XC_to_90)
 {
-
     int num = convert_to_arabic_num("XCVIII");
     ck_assert_int_eq(num, 98);
 }
@@ -85,7 +76,6 @@ END_TEST
 
 START_TEST (test_convert_C_to_100)
 {
-
     int num = convert_to_arabic_num("C");
     ck_assert_int_eq(num, 100);
 }
@@ -93,7 +83,6 @@ END_TEST
 
 START_TEST (test_convert_CD_to_400)
 {
-
     int num = convert_to_arabic_num("CD");
     ck_assert_int_eq(num, 400);
 }
@@ -101,7 +90,6 @@ END_TEST
 
 START_TEST (test_convert_CD_to_500)
 {
-
     int num = convert_to_arabic_num("D");
     ck_assert_int_eq(num, 500);
 }
@@ -109,7 +97,6 @@ END_TEST
 
 START_TEST (test_convert_CM_to_900)
 {
-
     int num = convert_to_arabic_num("CM");
     ck_assert_int_eq(num, 900);
 }
@@ -118,7 +105,6 @@ END_TEST
 
 START_TEST (test_convert_M_to_1000)
 {
-
     int num = convert_to_arabic_num("M");
     ck_assert_int_eq(num, 1000);
 }

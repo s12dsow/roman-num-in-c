@@ -10,7 +10,6 @@ END_TEST
 
 START_TEST (test_convert_IIII_is_invalid)
 {
-
     int num = is_valid_numeral("IIII");
     ck_assert_int_eq(num, 0);
 }
@@ -18,7 +17,6 @@ END_TEST
 
 START_TEST (test_convert_MMDDCC_is_invalid)
 {
-
     int num = is_valid_numeral("MMDDCC");
     ck_assert_int_eq(num, 0);
 }
@@ -26,7 +24,6 @@ END_TEST
 
 START_TEST (test_convert_IIZJID_is_invalid)
 {
-
     int num = is_valid_numeral("IIZJID");
     ck_assert_int_eq(num, 0);
 }
