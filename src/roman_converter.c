@@ -22,7 +22,7 @@ static const roman_converter ROMAN_TO_ARABIC_CONVERSION[] = {
 	{ .roman = "IV", .num = 4 },
 	{ .roman = "I", .num = 1 }
 };
-int roman_converter_len = sizeof(ROMAN_TO_ARABIC_CONVERSION) / sizeof(roman_converter);
+static int roman_converter_len = sizeof(ROMAN_TO_ARABIC_CONVERSION) / sizeof(roman_converter);
 
 int convert_to_arabic_num(char *roman_numeral) {
 	int arabic_num = 0;

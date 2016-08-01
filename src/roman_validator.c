@@ -2,7 +2,7 @@
 #include <regex.h>
 #include <stdio.h>
 
-char valid_pattern[] = "^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$";
+static char valid_pattern[] = "^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$";
 
 int is_valid_numeral(char *roman_num) {
 	regex_t regex_compiled;
