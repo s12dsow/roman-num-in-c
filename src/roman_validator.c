@@ -17,6 +17,5 @@ int is_valid_numeral(char *roman_num) {
 	if (status == REG_NOMATCH) {
 		return 0;
 	}
-
 	return 1;
 }

@@ -140,6 +140,22 @@ START_TEST (test_convert_IIII_is_invalid)
 }
 END_TEST
 
+START_TEST (test_convert_MMDDCC_is_invalid)
+{
+
+    int num = convert_to_arabic_num("MMDDCC");
+    ck_assert_int_eq(num, 0);
+}
+END_TEST
+
+START_TEST (test_convert_IIZJID_is_invalid)
+{
+
+    int num = convert_to_arabic_num("IIZJID");
+    ck_assert_int_eq(num, 0);
+}
+END_TEST
+
 // Convert to Roman
 
 START_TEST (test_convert_1_to_I)
@@ -323,6 +339,10 @@ Suite* roman_converter_suite(void)
     tcase_add_test(tc_convert_to_arabic, test_convert_M_to_1000);
     tcase_add_test(tc_convert_to_arabic, test_convert_A_is_invalid);
     tcase_add_test(tc_convert_to_arabic, test_convert_IIII_is_invalid);
+    tcase_add_test(tc_convert_to_arabic, test_convert_MMDDCC_is_invalid);
+    tcase_add_test(tc_convert_to_arabic, test_convert_IIZJID_is_invalid);
+
+
 
     suite_add_tcase(s, tc_convert_to_arabic);
 
