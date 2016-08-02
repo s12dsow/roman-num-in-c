@@ -73,5 +73,5 @@ So that I can do my work faster and with fewer mathematical errors.
 
 
 ### To build and run tests:
-	make run-test
+	make test
 
