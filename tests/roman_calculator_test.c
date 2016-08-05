@@ -105,15 +105,35 @@ START_TEST (test_MDCCC_minus_DXXX_returns_MCCLXX)
 }
 END_TEST
 
+START_TEST (test_XXXXXX_plus_ZZZZZ_returns_empty_string)
+{
+    char roman_num[16];
+
+    add("XXXXXX", "ZZZZZ", roman_num);
+    ck_assert_str_eq(roman_num, "");
+}
+END_TEST
+
+START_TEST (test_IIIX_minus_MDXMD_returns_empty_string)
+{
+    char roman_num[16];
+
+    add("IIIX", "MDXMD", roman_num);
+    ck_assert_str_eq(roman_num, "");
+}
+END_TEST
+
 Suite* roman_calculator_suite(void)
 {
     Suite *s;
     TCase *tc_calculator;
+    TCase *tc_invalid;
 
     s = suite_create("Roman Calculator");
 
     /* Core test case */
     tc_calculator = tcase_create("Calculator");
+    tc_invalid = tcase_create("Invalid");
 
     tcase_add_test(tc_calculator, test_I_plus_I_returns_II);
     tcase_add_test(tc_calculator, test_I_plus_II_returns_III);
@@ -128,7 +148,12 @@ Suite* roman_calculator_suite(void)
     tcase_add_test(tc_calculator, test_MD_minus_LXXVIII_returns_MCDXXII);
     tcase_add_test(tc_calculator, test_MDCCC_minus_DXXX_returns_MCCLXX);
 
+    tcase_add_test(tc_invalid, test_XXXXXX_plus_ZZZZZ_returns_empty_string);
+    tcase_add_test(tc_invalid, test_IIIX_minus_MDXMD_returns_empty_string);
+
     suite_add_tcase(s, tc_calculator);
+    suite_add_tcase(s, tc_invalid);
+
 
     return s;
 }
