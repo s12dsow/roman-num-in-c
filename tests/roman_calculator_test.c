@@ -132,6 +132,20 @@ START_TEST (test_roman_num_does_not_blow_up_on_NULL_input)
 }
 END_TEST
 
+START_TEST (test_roman_num_as_NULL_does_not_blow_up_in_add)
+{
+
+    add("II", "IV", NULL);
+}
+END_TEST
+
+START_TEST (test_roman_num_as_NULL_does_not_blow_up_in_subtract)
+{
+
+    substract("II", "IV", NULL);
+}
+END_TEST
+
 Suite* roman_calculator_suite(void)
 {
     Suite *s;
@@ -160,6 +174,8 @@ Suite* roman_calculator_suite(void)
     tcase_add_test(tc_invalid, test_XXXXXX_plus_ZZZZZ_returns_empty_string);
     tcase_add_test(tc_invalid, test_IIIX_minus_MDXMD_returns_empty_string);
     tcase_add_test(tc_invalid, test_roman_num_does_not_blow_up_on_NULL_input);
+    tcase_add_test(tc_invalid, test_roman_num_as_NULL_does_not_blow_up_in_add);
+    tcase_add_test(tc_invalid, test_roman_num_as_NULL_does_not_blow_up_in_subtract);
 
     suite_add_tcase(s, tc_calculator);
     suite_add_tcase(s, tc_invalid);
