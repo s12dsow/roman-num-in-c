@@ -123,6 +123,15 @@ START_TEST (test_IIIX_minus_MDXMD_returns_empty_string)
 }
 END_TEST
 
+START_TEST (test_roman_num_does_not_blow_up_on_NULL_input)
+{
+    char roman_num[16];
+
+    add(NULL, NULL, roman_num);
+    ck_assert_str_eq(roman_num, "");
+}
+END_TEST
+
 Suite* roman_calculator_suite(void)
 {
     Suite *s;
@@ -150,6 +159,7 @@ Suite* roman_calculator_suite(void)
 
     tcase_add_test(tc_invalid, test_XXXXXX_plus_ZZZZZ_returns_empty_string);
     tcase_add_test(tc_invalid, test_IIIX_minus_MDXMD_returns_empty_string);
+    tcase_add_test(tc_invalid, test_roman_num_does_not_blow_up_on_NULL_input);
 
     suite_add_tcase(s, tc_calculator);
     suite_add_tcase(s, tc_invalid);

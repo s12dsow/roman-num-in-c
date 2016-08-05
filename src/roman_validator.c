@@ -5,17 +5,20 @@
 static char valid_pattern[] = "^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$";
 
 int is_valid_numeral(const char *roman_num) {
-	regex_t regex_compiled;
-	int status;
 
-	regcomp(&regex_compiled, valid_pattern, REG_EXTENDED);
+	if(roman_num && roman_num[0]) {
+		regex_t regex_compiled;
+		int status;
 
-	status = regexec(&regex_compiled, roman_num, (size_t) 0, NULL, 0);
+		regcomp(&regex_compiled, valid_pattern, REG_EXTENDED);
 
-	regfree(&regex_compiled);
+		status = regexec(&regex_compiled, roman_num, (size_t) 0, NULL, 0);
 
-	if (status == REG_NOMATCH) {
-		return 0;
+		regfree(&regex_compiled);
+
+		if (status == REG_NOMATCH) {
+			return 0;
+		}
+		return 1;
 	}
-	return 1;
 }
