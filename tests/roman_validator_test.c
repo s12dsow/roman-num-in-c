@@ -35,6 +35,13 @@ START_TEST (test_input_MMMMM_is_invalid)
     ck_assert_int_eq(num, 0);
 }
 END_TEST
+
+START_TEST (test_input_MMMCMXCIX_is_valid)
+{
+    int num = is_valid_numeral("MMMCMXCIX");
+    ck_assert_int_eq(num, 1);
+}
+END_TEST
 	
 Suite* roman_validator_suite(void)
 {
@@ -50,6 +57,7 @@ Suite* roman_validator_suite(void)
 	tcase_add_test(tc_roman_validator, test_input_MMDDCC_is_invalid);
 	tcase_add_test(tc_roman_validator, test_input_IIZJID_is_invalid);
 	tcase_add_test(tc_roman_validator, test_input_MMMMM_is_invalid);
+	tcase_add_test(tc_roman_validator, test_input_MMMCMXCIX_is_valid);
 
 	suite_add_tcase(s, tc_roman_validator);
 
