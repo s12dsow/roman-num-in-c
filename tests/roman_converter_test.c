@@ -115,9 +115,10 @@ END_TEST
 
 START_TEST (test_convert_1_to_I)
 {
-    char roman_val[16];
+    int buffer_len = 16;
+    char roman_val[buffer_len];
 
-    convert_to_roman(1, roman_val);
+    convert_to_roman(1, roman_val, buffer_len);
 
     ck_assert_str_eq(roman_val, "I");
 }
@@ -126,9 +127,10 @@ END_TEST
 
 START_TEST (test_convert_2_to_II)
 {
-    char roman_val[16];
+    int buffer_len = 16;
+    char roman_val[buffer_len];
 
-    convert_to_roman(2, roman_val);
+    convert_to_roman(2, roman_val, buffer_len);
 
     ck_assert_str_eq(roman_val, "II");
 }
@@ -136,9 +138,10 @@ END_TEST
 
 START_TEST (test_convert_3_to_III)
 {
-    char roman_val[16];
+    int buffer_len = 16;
+    char roman_val[buffer_len];
 
-    convert_to_roman(3, roman_val);
+    convert_to_roman(3, roman_val, buffer_len);
 
     ck_assert_str_eq(roman_val, "III");
 }
@@ -146,9 +149,10 @@ END_TEST
 
 START_TEST (test_convert_4_to_IV)
 {
-    char roman_val[16];
+    int buffer_len = 16;
+    char roman_val[buffer_len];
 
-    convert_to_roman(4, roman_val);
+    convert_to_roman(4, roman_val, buffer_len);
 
     ck_assert_str_eq(roman_val, "IV");
 }
@@ -157,9 +161,10 @@ END_TEST
 
 START_TEST (test_convert_5_to_V)
 {
-    char roman_val[16];
+    int buffer_len = 16;
+    char roman_val[buffer_len];
 
-    convert_to_roman(5, roman_val);
+    convert_to_roman(5, roman_val, buffer_len);
 
     ck_assert_str_eq(roman_val, "V");
 }
@@ -167,9 +172,10 @@ END_TEST
 
 START_TEST (test_convert_9_to_IX)
 {
-    char roman_val[16];
+    int buffer_len = 16;
+    char roman_val[buffer_len];
 
-    convert_to_roman(9, roman_val);
+    convert_to_roman(9, roman_val, buffer_len);
 
     ck_assert_str_eq(roman_val, "IX");
 }
@@ -177,9 +183,10 @@ END_TEST
 
 START_TEST (test_convert_10_to_X)
 {
-    char roman_val[16];
+    int buffer_len = 16;
+    char roman_val[buffer_len];
 
-    convert_to_roman(10, roman_val);
+    convert_to_roman(10, roman_val, buffer_len);
 
     ck_assert_str_eq(roman_val, "X");
 }
@@ -187,9 +194,10 @@ END_TEST
 
 START_TEST (test_convert_40_to_XL)
 {
-    char roman_val[16];
+    int buffer_len = 16;
+    char roman_val[buffer_len];
 
-    convert_to_roman(40, roman_val);
+    convert_to_roman(40, roman_val, buffer_len);
 
     ck_assert_str_eq(roman_val, "XL");
 }
@@ -197,9 +205,10 @@ END_TEST
 
 START_TEST (test_convert_50_to_L)
 {
-    char roman_val[16];
+    int buffer_len = 16;
+    char roman_val[buffer_len];
 
-    convert_to_roman(50, roman_val);
+    convert_to_roman(50, roman_val, buffer_len);
 
     ck_assert_str_eq(roman_val, "L");
 }
@@ -207,9 +216,10 @@ END_TEST
 
 START_TEST (test_convert_90_to_XC)
 {
-    char roman_val[16];
+    int buffer_len = 16;
+    char roman_val[buffer_len];
 
-    convert_to_roman(90, roman_val);
+    convert_to_roman(90, roman_val, buffer_len);
 
     ck_assert_str_eq(roman_val, "XC");
 }
@@ -217,9 +227,10 @@ END_TEST
 
 START_TEST (test_convert_100_to_C)
 {
-    char roman_val[16];
+    int buffer_len = 16;
+    char roman_val[buffer_len];
 
-    convert_to_roman(100, roman_val);
+    convert_to_roman(100, roman_val, buffer_len);
 
     ck_assert_str_eq(roman_val, "C");
 }
@@ -227,9 +238,10 @@ END_TEST
 
 START_TEST (test_convert_400_to_CD)
 {
-    char roman_val[16];
+    int buffer_len = 16;
+    char roman_val[buffer_len];
 
-    convert_to_roman(400, roman_val);
+    convert_to_roman(400, roman_val, buffer_len);
 
     ck_assert_str_eq(roman_val, "CD");
 }
@@ -237,9 +249,10 @@ END_TEST
 
 START_TEST (test_convert_500_to_D)
 {
-    char roman_val[16];
+    int buffer_len = 16;
+    char roman_val[buffer_len];
 
-    convert_to_roman(500, roman_val);
+    convert_to_roman(500, roman_val, buffer_len);
 
     ck_assert_str_eq(roman_val, "D");
 }
@@ -247,9 +260,10 @@ END_TEST
 
 START_TEST (test_convert_900_to_CM)
 {
-    char roman_val[16];
+    int buffer_len = 16;
+    char roman_val[buffer_len];
 
-    convert_to_roman(900, roman_val);
+    convert_to_roman(900, roman_val, buffer_len);
 
     ck_assert_str_eq(roman_val, "CM");
 }
@@ -257,9 +271,10 @@ END_TEST
 
 START_TEST (test_convert_1000_to_M)
 {
-    char roman_val[16];
+    int buffer_len = 16;
+    char roman_val[buffer_len];
 
-    convert_to_roman(1000, roman_val);
+    convert_to_roman(1000, roman_val, buffer_len);
 
     ck_assert_str_eq(roman_val, "M");
 }
