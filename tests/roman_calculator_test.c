@@ -116,6 +116,8 @@ START_TEST (test_MDCCC_minus_DXXX_returns_MCCLXX)
 }
 END_TEST
 
+// Test invalid
+
 START_TEST (test_XXXXXX_plus_ZZZZZ_returns_empty_string)
 {
     int buffer_len = 16;
@@ -170,7 +172,6 @@ Suite* roman_calculator_suite(void)
 
     s = suite_create("Roman Calculator");
 
-    /* Core test case */
     tc_calculator = tcase_create("Calculator");
     tc_invalid = tcase_create("Invalid");
 
