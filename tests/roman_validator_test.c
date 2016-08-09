@@ -1,5 +1,7 @@
 #include <check.h>
 #include "../src/roman_validator.h"
+#include "roman_validator_test.h"
+
 
 START_TEST (test_input_A_is_invalid)
 {

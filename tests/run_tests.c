@@ -1,7 +1,8 @@
 #include <stdlib.h>
-#include "roman_calculator_test.c"
-#include "roman_converter_test.c"
-#include "roman_validator_test.c"
+#include <check.h>
+#include "roman_calculator_test.h"
+#include "roman_converter_test.h"
+#include "roman_validator_test.h"
 
 int main(void)
 {

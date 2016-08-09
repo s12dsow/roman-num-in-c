@@ -1,5 +1,7 @@
 #include <check.h>
 #include "../src/roman_calculator.h"
+#include "roman_calculator_test.h"
+
 
 // Test Add
 START_TEST (test_I_plus_I_returns_II)
