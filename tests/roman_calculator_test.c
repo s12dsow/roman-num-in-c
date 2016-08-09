@@ -6,7 +6,7 @@
 // Test Add
 START_TEST (test_I_plus_I_returns_II)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     add("I", "I", roman_num, buffer_len);
@@ -16,7 +16,7 @@ END_TEST
 
 START_TEST (test_I_plus_II_returns_III)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     add("I", "II", roman_num, buffer_len);
@@ -26,7 +26,7 @@ END_TEST
 
 START_TEST (test_II_plus_II_returns_IV)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     add("II", "II", roman_num, buffer_len);
@@ -36,7 +36,7 @@ END_TEST
 
 START_TEST (test_V_plus_IV_returns_IX)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     add("V", "IV", roman_num, buffer_len);
@@ -46,7 +46,7 @@ END_TEST
 
 START_TEST (test_XCVIII_plus_LXIX_returns_CLXVII)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     add("XCVIII", "LXIX", roman_num, buffer_len);
@@ -56,7 +56,7 @@ END_TEST
 
 START_TEST (test_DXXX_plus_MDCCC_returns_MMCCCXXX)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     add("DXXX", "MDCCC", roman_num, buffer_len);
@@ -68,7 +68,7 @@ END_TEST
 
 START_TEST (test_V_minus_I_returns_IV)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     substract("V", "I", roman_num, buffer_len);
@@ -79,7 +79,7 @@ END_TEST
 
 START_TEST (test_XXIV_minus_XIV_returns_X)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     substract("XXIV", "XIV", roman_num, buffer_len);
@@ -89,7 +89,7 @@ END_TEST
 
 START_TEST (test_DCCVII_minus_XLIII_returns_DCLXIV)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     substract("DCCVII", "XLIII", roman_num, buffer_len);
@@ -100,7 +100,7 @@ END_TEST
 
 START_TEST (test_MD_minus_LXXVIII_returns_MCDXXII)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     substract("MD", "LXXVIII", roman_num, buffer_len);
@@ -110,7 +110,7 @@ END_TEST
 
 START_TEST (test_MDCCC_minus_DXXX_returns_MCCLXX)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     substract("MDCCC", "DXXX", roman_num, buffer_len);
@@ -122,7 +122,7 @@ END_TEST
 
 START_TEST (test_XXXXXX_plus_ZZZZZ_returns_empty_string)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     add("XXXXXX", "ZZZZZ", roman_num, buffer_len);
@@ -132,7 +132,7 @@ END_TEST
 
 START_TEST (test_IIIX_minus_MDXMD_returns_empty_string)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     add("IIIX", "MDXMD", roman_num, buffer_len);
@@ -142,7 +142,7 @@ END_TEST
 
 START_TEST (test_roman_num_does_not_blow_up_on_NULL_input)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     add(NULL, NULL, roman_num, buffer_len);
@@ -152,7 +152,7 @@ END_TEST
 
 START_TEST (test_roman_num_as_NULL_does_not_blow_up_in_add)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
 
     add("II", "IV", NULL, buffer_len);
 }
@@ -160,7 +160,7 @@ END_TEST
 
 START_TEST (test_roman_num_as_NULL_does_not_blow_up_in_subtract)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
 
     substract("II", "IV", NULL, buffer_len);
 }
@@ -168,7 +168,7 @@ END_TEST
 
 START_TEST (test_MMM_plus_MMM_returns_invalid)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     add("MMM", "MMM", roman_num, buffer_len);
@@ -178,7 +178,7 @@ END_TEST
 
 START_TEST (test_I_minus_IV_returns_invalid)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_num[buffer_len];
 
     substract("I", "IV", roman_num, buffer_len);

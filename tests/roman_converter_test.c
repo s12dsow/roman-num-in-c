@@ -117,7 +117,7 @@ END_TEST
 
 START_TEST (test_convert_1_to_I)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(1, roman_val, buffer_len);
@@ -129,7 +129,7 @@ END_TEST
 
 START_TEST (test_convert_2_to_II)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(2, roman_val, buffer_len);
@@ -140,7 +140,7 @@ END_TEST
 
 START_TEST (test_convert_3_to_III)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(3, roman_val, buffer_len);
@@ -151,7 +151,7 @@ END_TEST
 
 START_TEST (test_convert_4_to_IV)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(4, roman_val, buffer_len);
@@ -163,7 +163,7 @@ END_TEST
 
 START_TEST (test_convert_5_to_V)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(5, roman_val, buffer_len);
@@ -174,7 +174,7 @@ END_TEST
 
 START_TEST (test_convert_9_to_IX)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(9, roman_val, buffer_len);
@@ -185,7 +185,7 @@ END_TEST
 
 START_TEST (test_convert_10_to_X)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(10, roman_val, buffer_len);
@@ -196,7 +196,7 @@ END_TEST
 
 START_TEST (test_convert_40_to_XL)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(40, roman_val, buffer_len);
@@ -207,7 +207,7 @@ END_TEST
 
 START_TEST (test_convert_50_to_L)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(50, roman_val, buffer_len);
@@ -218,7 +218,7 @@ END_TEST
 
 START_TEST (test_convert_90_to_XC)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(90, roman_val, buffer_len);
@@ -229,7 +229,7 @@ END_TEST
 
 START_TEST (test_convert_100_to_C)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(100, roman_val, buffer_len);
@@ -240,7 +240,7 @@ END_TEST
 
 START_TEST (test_convert_400_to_CD)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(400, roman_val, buffer_len);
@@ -251,7 +251,7 @@ END_TEST
 
 START_TEST (test_convert_500_to_D)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(500, roman_val, buffer_len);
@@ -262,7 +262,7 @@ END_TEST
 
 START_TEST (test_convert_900_to_CM)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(900, roman_val, buffer_len);
@@ -273,7 +273,7 @@ END_TEST
 
 START_TEST (test_convert_1000_to_M)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(1000, roman_val, buffer_len);
@@ -286,7 +286,7 @@ END_TEST
 
 START_TEST (test_convert_4000_is_invalid)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(4000, roman_val, buffer_len);
@@ -297,7 +297,7 @@ END_TEST
 
 START_TEST (test_convert_negative_values_is_invalid)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(-20, roman_val, buffer_len);
@@ -308,7 +308,7 @@ END_TEST
 
 START_TEST (test_convert_zero_is_invalid)
 {
-    int buffer_len = 16;
+    const int buffer_len = 16;
     char roman_val[buffer_len];
 
     convert_to_roman(0, roman_val, buffer_len);
