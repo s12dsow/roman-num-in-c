@@ -2,7 +2,7 @@
 #include "roman_calculator.h"
 #include "roman_validator.h"
 
-void add(char *first_roman_string_input, char *second_roman_string_input, char *roman_num, int buffer_len) {
+void add(const char *first_roman_string_input, const char *second_roman_string_input, char *roman_num, const int buffer_len) {
 
 	if(roman_num) {
 		roman_num[0] = '\0';
@@ -15,7 +15,7 @@ void add(char *first_roman_string_input, char *second_roman_string_input, char *
 	}
 }
 
-void substract(char *first_roman_string_input, char *second_roman_string_input, char *roman_num, int buffer_len) {
+void substract(const char *first_roman_string_input, const char *second_roman_string_input, char *roman_num, const int buffer_len) {
 
 	if(roman_num) {
 		roman_num[0] = '\0';

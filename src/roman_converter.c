@@ -24,7 +24,7 @@ static const roman_converter ROMAN_TO_ARABIC_CONVERSION[] = {
 };
 static int roman_converter_len = sizeof(ROMAN_TO_ARABIC_CONVERSION) / sizeof(roman_converter);
 
-int convert_to_arabic_num(char *roman_numeral) {
+int convert_to_arabic_num(const char *roman_numeral) {
 	int arabic_num = 0;
 	int len = strlen(roman_numeral);
 
@@ -44,7 +44,7 @@ int convert_to_arabic_num(char *roman_numeral) {
 	return arabic_num;
 }
 
-void convert_to_roman(int arabic_num, char *roman_val, int buffer_len) {
+void convert_to_roman(int arabic_num, char *roman_val, const int buffer_len) {
 	*roman_val = 0;
 
 	if(arabic_num <= 3999) {
