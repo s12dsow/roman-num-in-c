@@ -176,6 +176,16 @@ START_TEST (test_MMM_plus_MMM_returns_invalid)
 }
 END_TEST
 
+START_TEST (test_I_minus_IV_returns_invalid)
+{
+    int buffer_len = 16;
+    char roman_num[buffer_len];
+
+    substract("I", "IV", roman_num, buffer_len);
+    ck_assert_str_eq(roman_num, "");
+}
+END_TEST
+
 Suite* roman_calculator_suite(void)
 {
     Suite *s;
@@ -187,6 +197,7 @@ Suite* roman_calculator_suite(void)
     tc_calculator = tcase_create("Calculator");
     tc_invalid = tcase_create("Invalid");
 
+    // Test Add
     tcase_add_test(tc_calculator, test_I_plus_I_returns_II);
     tcase_add_test(tc_calculator, test_I_plus_II_returns_III);
     tcase_add_test(tc_calculator, test_II_plus_II_returns_IV);
@@ -194,19 +205,21 @@ Suite* roman_calculator_suite(void)
     tcase_add_test(tc_calculator, test_XCVIII_plus_LXIX_returns_CLXVII);
     tcase_add_test(tc_calculator, test_DXXX_plus_MDCCC_returns_MMCCCXXX);
 
+    // Test Substract
     tcase_add_test(tc_calculator, test_V_minus_I_returns_IV);
     tcase_add_test(tc_calculator, test_XXIV_minus_XIV_returns_X);
     tcase_add_test(tc_calculator, test_DCCVII_minus_XLIII_returns_DCLXIV);
     tcase_add_test(tc_calculator, test_MD_minus_LXXVIII_returns_MCDXXII);
     tcase_add_test(tc_calculator, test_MDCCC_minus_DXXX_returns_MCCLXX);
 
+    // Test Invalid
     tcase_add_test(tc_invalid, test_XXXXXX_plus_ZZZZZ_returns_empty_string);
     tcase_add_test(tc_invalid, test_IIIX_minus_MDXMD_returns_empty_string);
     tcase_add_test(tc_invalid, test_roman_num_does_not_blow_up_on_NULL_input);
     tcase_add_test(tc_invalid, test_roman_num_as_NULL_does_not_blow_up_in_add);
     tcase_add_test(tc_invalid, test_roman_num_as_NULL_does_not_blow_up_in_subtract);
     tcase_add_test(tc_invalid, test_MMM_plus_MMM_returns_invalid);
-
+    tcase_add_test(tc_invalid, test_I_minus_IV_returns_invalid);
 
     suite_add_tcase(s, tc_calculator);
     suite_add_tcase(s, tc_invalid);

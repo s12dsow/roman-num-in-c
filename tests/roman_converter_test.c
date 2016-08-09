@@ -295,6 +295,27 @@ START_TEST (test_convert_4000_is_invalid)
 }
 END_TEST
 
+START_TEST (test_convert_negative_values_is_invalid)
+{
+    int buffer_len = 16;
+    char roman_val[buffer_len];
+
+    convert_to_roman(-20, roman_val, buffer_len);
+
+    ck_assert_str_eq(roman_val, "");
+}
+END_TEST
+
+START_TEST (test_convert_zero_is_invalid)
+{
+    int buffer_len = 16;
+    char roman_val[buffer_len];
+
+    convert_to_roman(0, roman_val, buffer_len);
+
+    ck_assert_str_eq(roman_val, "");
+}
+END_TEST
 
 Suite* roman_converter_suite(void)
 {
@@ -309,7 +330,7 @@ Suite* roman_converter_suite(void)
     tc_convert_to_roman = tcase_create("Convert to Roman");
     tc_invalid = tcase_create("Invalid");
 
-    /* Convert to arabic test case */
+    // Convert to arabic test case
     tcase_add_test(tc_convert_to_arabic, test_convert_I_to_1);
     tcase_add_test(tc_convert_to_arabic, test_convert_II_to_2);
     tcase_add_test(tc_convert_to_arabic, test_convert_IV_to_4);
@@ -326,9 +347,8 @@ Suite* roman_converter_suite(void)
     tcase_add_test(tc_convert_to_arabic, test_convert_CM_to_900);
     tcase_add_test(tc_convert_to_arabic, test_convert_M_to_1000);
 
-    suite_add_tcase(s, tc_convert_to_arabic);
 
-    /* Convert to roman test case */
+    // Convert to roman test case
     tcase_add_test(tc_convert_to_roman, test_convert_1_to_I);
     tcase_add_test(tc_convert_to_roman, test_convert_2_to_II);
     tcase_add_test(tc_convert_to_roman, test_convert_3_to_III);
@@ -345,10 +365,13 @@ Suite* roman_converter_suite(void)
     tcase_add_test(tc_convert_to_roman, test_convert_900_to_CM);
     tcase_add_test(tc_convert_to_roman, test_convert_1000_to_M);
 
-    suite_add_tcase(s, tc_convert_to_roman);
-
+    // Test invalid
     tcase_add_test(tc_convert_to_roman, test_convert_4000_is_invalid);
+    tcase_add_test(tc_convert_to_roman, test_convert_negative_values_is_invalid);
+    tcase_add_test(tc_convert_to_roman, test_convert_zero_is_invalid);
 
+    suite_add_tcase(s, tc_convert_to_roman);
+    suite_add_tcase(s, tc_convert_to_arabic);
     suite_add_tcase(s, tc_invalid);
 
     return s;
