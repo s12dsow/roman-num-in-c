@@ -282,16 +282,32 @@ START_TEST (test_convert_1000_to_M)
 }
 END_TEST
 
+// Invalid
+
+START_TEST (test_convert_4000_is_invalid)
+{
+    int buffer_len = 16;
+    char roman_val[buffer_len];
+
+    convert_to_roman(4000, roman_val, buffer_len);
+
+    ck_assert_str_eq(roman_val, "");
+}
+END_TEST
+
+
 Suite* roman_converter_suite(void)
 {
     Suite *s;
     TCase *tc_convert_to_arabic;
     TCase *tc_convert_to_roman;
+    TCase *tc_invalid;
 
     s = suite_create("Roman Numerals Converter");
 
     tc_convert_to_arabic = tcase_create("Convert to Arabic");
     tc_convert_to_roman = tcase_create("Convert to Roman");
+    tc_invalid = tcase_create("Invalid");
 
     /* Convert to arabic test case */
     tcase_add_test(tc_convert_to_arabic, test_convert_I_to_1);
@@ -330,6 +346,10 @@ Suite* roman_converter_suite(void)
     tcase_add_test(tc_convert_to_roman, test_convert_1000_to_M);
 
     suite_add_tcase(s, tc_convert_to_roman);
+
+    tcase_add_test(tc_convert_to_roman, test_convert_4000_is_invalid);
+
+    suite_add_tcase(s, tc_invalid);
 
     return s;
 }

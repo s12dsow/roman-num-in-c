@@ -47,18 +47,20 @@ int convert_to_arabic_num(char *roman_numeral) {
 void convert_to_roman(int arabic_num, char *roman_val, int buffer_len) {
 	*roman_val = 0;
 
-	for(int i = 0; i < roman_converter_len; i++) {
-		const roman_converter converter = ROMAN_TO_ARABIC_CONVERSION[i];
+	if(arabic_num <= 3999) {
+		for(int i = 0; i < roman_converter_len; i++) {
+			const roman_converter converter = ROMAN_TO_ARABIC_CONVERSION[i];
 
-		while(arabic_num >= converter.num) {
+			while(arabic_num >= converter.num) {
 
-			if(strlen(roman_val) < buffer_len) {
-				strcat(roman_val, converter.roman);
-				arabic_num -= converter.num;
-			}
-			else {
-				roman_val[0] = '\0';
-				return;
+				if(strlen(roman_val) < buffer_len) {
+					strcat(roman_val, converter.roman);
+					arabic_num -= converter.num;
+				}
+				else {
+					roman_val[0] = '\0';
+					return;
+				}
 			}
 		}
 	}
